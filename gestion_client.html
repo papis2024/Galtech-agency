@@ -1,0 +1,70 @@
+{% extends "agence/base.html" %}
+{% block content %}
+<div class="container mt-5 mb-5 col-sm-12">
+ <div>
+   <h4 class="text-center alert alert alert-info">Affichage des informations des clients dans la base de données</h4>
+ </div>
+    
+
+            <div class="col-sm-7 ">
+              
+    
+      
+    {% if cli %}
+
+    <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mot de passe</th>
+                <th scope="col">Date de naissance</th>
+                <th scope="col">Adresse</th>
+                <th scope="col">Téléphone</th>
+                <th scope="col">Type de chambre</th>
+                <th scope="col">Ville</th>
+                <th scope="col">Pays</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for c in cli %}
+              <tr>
+                <th scope="row">{{c.id}}</th>
+                <td>{{c.prenom}}</td>
+                <td>{{c.nom}}</td>
+                <td>{{c.email}}</td>
+                <td>{{c.mot_de_passe}}</td>
+                <td>{{c.date_naissance}}</td>
+                <td>{{c.adresse}}</td>
+                <td>{{c.telephone}}</td>
+                <td>{{c.type_chambre}}</td>
+                <td>{{c.ville}}</td>
+                <td>{{c.pays}}</td>
+                <td>
+                  <a href="{% url 'modifierdonner' c.id %}" class="btn btn-warning btn-sm">Modifier</a>
+                  
+                  <form action="{% url 'supprimerdonner' c.id %}" method="post" class="d-inline"> 
+                  {% csrf_token %}
+                    <input type="submit" class="btn btn-danger" value="Supprimer">
+                  </form>
+                </td>
+              </tr>
+              
+              {% endfor %}
+            </tbody>
+          </table>
+
+        {% else %}
+        <h4 class="text-center alert alert-warning">Pas d'enrégistrement</h4>
+        
+        {% endif %}
+   </div>
+  
+
+  
+</div>
+
+{% endblock %} 

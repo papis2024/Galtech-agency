@@ -1,0 +1,31 @@
+{% extends "agence/base.html" %}
+{% block content %}
+
+ 
+
+
+
+
+<div class="container mt-5 mb-5">
+  <h3 class="text-center alert alert-info"> Réservez vos vacances Chez Nous !</h3>
+    <div class="row" >
+        <div class="col-lg-4">
+     
+
+
+          <form action="" method="POST"> 
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" class="btn btn-success" value="Valider">
+          </form>
+
+
+
+
+
+        </div>
+    </div>   
+
+</div>
+
+  {% endblock %} 

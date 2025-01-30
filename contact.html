@@ -1,0 +1,29 @@
+{% extends "agence/base.html" %}
+{% block content %}
+
+
+
+<div class="container">
+  <div class="row mt-5 mb-5 shadow">
+      <div class-"col-lg-6 shadow p-4">
+          <h3> Contactez-nous</h3>
+          <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" class="btn btn-success" value="Valider">
+            <a href="{% url 'cl' %}" class="btn btn-info">Retour en arriére</a>
+ 
+          </form>
+        </div>
+          <div class="col-lg-8">
+            {% load static %}
+            <img src="{% static 'agence/images/l-hotel-coeur-senegal.jpg' %}" alt="image">
+           
+        </div>
+      
+  </div>
+</div>
+
+
+
+{% endblock %} 
