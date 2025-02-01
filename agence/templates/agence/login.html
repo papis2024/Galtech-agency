@@ -1,0 +1,27 @@
+{% extends "agence/base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-5 mb-5 shadow">
+        <div class-"col-lg-6 shadow p-4">
+            <h3> Connexion</h3>
+            <form action="" method="post">
+              {% csrf_token %}
+              {{form.as_p}}
+              <input type="submit" class="btn btn-success" value="Connecter" Required>
+              <a href="{% url 'accueil' %}" class="btn btn-info">Retour en arriére</a>
+   
+            </form>
+            {% if messages%}
+            {% for message in messages %}
+            <div class="alert alert-danger text-center"> <strong> {{messsage}}</strong></div>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <div class="col-lg-6">
+            <img src="http://2.bp.blogspot.com/-xfNXIQhCtgc/UFLX5dU0-_I/AAAAAAAAABk/tELqZIaVz8A/s1600/sofitel+Marrakech.jpeg" alt="image" class="img-fluid img-reponsive">
+         
+        </div>
+    </div>
+</div>
+{% endblock %}
