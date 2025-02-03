@@ -26,9 +26,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-23a@#^&j^730#s%qc2sed$e%ea41*^cws%1odh+5093$#_ty2o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# DEBUG = True
 
-ALLOWED_HOSTS = ['galtech-agency.onrender.com', 'localhost', '127.0.0.1']
+DEBUG = os.getenv("DEBUG", "False") == "True"
+
+
+# ALLOWED_HOSTS = ['galtech-agency.onrender.com', 'localhost', '127.0.0.1']
+
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "galtech-agency.onrender.com,127.0.0.1,localhost").split(",")
 
 
 # Application definition
