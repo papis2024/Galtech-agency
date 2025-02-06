@@ -31,16 +31,12 @@ SECRET_KEY = 'django-insecure-23a@#^&j^730#s%qc2sed$e%ea41*^cws%1odh+5093$#_ty2o
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 
-# ALLOWED_HOSTS = ['galtech-agency.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['galtech-agency.onrender.com', 'localhost', '127.0.0.1']
 
 
 # ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "galtech-agency.onrender.com, 127.0.0.1, localhost").split(", ")
 
-ALLOWED_HOSTS = [
-    "galtech-agency.onrender.com",
-    "127.0.0.1",
-    "localhost"
-]
+
 
 
 # Application definition
